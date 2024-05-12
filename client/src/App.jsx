@@ -8,7 +8,7 @@ function App() {
   const [notes, setNotes] = useState("");
   const [results, setResults] = useState([]);
 
-  const NODE_URL = `http://localhost:4000`;
+  const NODE_URL = `https://vercel.com/harshit10bishts-projects/dneuron-split-notes-server/7VzV5M7y9ogPmy7aGgnYTs8vifds`;
 
   //Count timer for 2 seconds
   useEffect(() => {
