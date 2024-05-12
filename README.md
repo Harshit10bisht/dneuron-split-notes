@@ -1,5 +1,4 @@
-![Uploading image.png…]()
-
+![image](https://github.com/Harshit10bisht/dneuron-split-notes/assets/54449818/14cd7ef6-02dd-4ce5-a75d-d4598fc19018)
 
 Main application link :
 https://dneuron-split-notes-client.vercel.app/
