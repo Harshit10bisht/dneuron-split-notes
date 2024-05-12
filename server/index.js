@@ -8,12 +8,12 @@ const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
-app.use(notesRouter);
+app.use("/", notesRouter);
 
-// app.get('/test', (req, res) => {
-//     console.log("HELLO GUYS");
-//     res.send({ data: "HELLO"});
-// });
+app.get('/', (req, res) => {
+    console.log("HELLO GUYS");
+    res.send({ data: "HELLO"});
+});
 
 app.listen(port, () => {
     console.log(`Listening to http://localhost:${port}`);
