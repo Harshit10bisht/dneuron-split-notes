@@ -31,7 +31,7 @@ router.post("/addNotes", async (req, res) => {
 router.delete("/deleteAll", async (req, res) => {
   try {
     await Notes.deleteMany({});
-    res.status(200).json({ msg: "All notes deleted successfully" });
+    res.status(200).json({ msg: "All notes are deleted successfully from database" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ msg: "Internal server error" });
@@ -41,7 +41,7 @@ router.delete("/deleteAll", async (req, res) => {
 router.get('/getAll', async (req, res) => {
     try {
       const allNotes = await Notes.find({}).sort({ createdAt: -1 }).limit(5);
-      res.status(200).json({ msg: "All notes are deleted successfully from database" });
+      res.status(200).json({ listNotes: allNotes });
     } catch (error) {
       // console.error(error);
       res.status(500).json({ msg: 'Internal server error' });
