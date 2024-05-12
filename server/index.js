@@ -6,9 +6,15 @@ require('dotenv').config();
 require('./db/mongoose.js');
 const port = process.env.PORT || 4000;
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
-app.use("/", notesRouter);
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
+  })
+app.use(notesRouter);
 
 app.get('/', (req, res) => {
     console.log("HELLO GUYS");
